@@ -13,7 +13,7 @@
       "96" : "icons/icon-96.png"
     },
 
-    "permissions": ["activeTab", "cookies", "menus", "contextMenus"],
+    "permissions": ["activeTab", "cookies", "<all_urls>", "menus", "contextMenus"],
   
     "background":{
       "scripts": ["etymology.js"]

@@ -25,26 +25,21 @@ browser.contextMenus.onClicked.addListener((info, tab) => {
         .then(data => {
             if (data.length == 0) {
                 alert(browser.i18n.getMessage("warningIncorrectString"));
-            }else if(typeof data[0] === 'string' || data[0] instanceof String){
-                console.log(browser.i18n.getMessage("warningIncorrectString"));
-                console.log(browser.i18n.getMessage("messagePossibleAlternatives"));
-                data.forEach( alternativeString => {
-                    if(alternativeString !== "")
-                    console.log(alternativeString)
-                });
             }else{
-                data.forEach(meaning => {
-                    var regex = new RegExp("^" + info.selectionText + "(:[\\d|(a-z)])?$", "i");
-                    if(regex.exec(meaning.meta.id)){
-                        console.log("D: ");
-                        meaning.shortdef.forEach(definition => {
-                            console.log(definition);
-                        });
-                        console.log("Et: ");
-                        console.log(meaning.et !== undefined ? meaning.et[0][1] : browser.i18n.getMessage("warningEtymologyNotAvailable"))
-                    }
-                    
+                browser.cookies.set({
+                    url: browser.extension.getURL(""),
+                    name: "etymologydata",
+                    value: JSON.stringify(data),
                 });
+
+                let createData = {
+                    type: "detached_panel",
+                    url: "popup/index.html",
+                    width: 250,
+                    height: 100,
+                  };
+                let creating = browser.windows.create(createData);
+                  
             }
             
         })
