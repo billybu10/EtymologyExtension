@@ -1,0 +1,33 @@
+{
+    "extensionName": {
+        "message": "Etymology extension",
+        "description": "Name of the extension."
+    },
+
+    "extensionDescription": {
+        "message": "Extension which allows you to check etymology of a highlighted word",
+        "description": "Description of the add-on."
+    },
+    "extensionHomePageURL":{
+        "message": "https://github.com/billybu10/EtymologyExtension",
+        "description": "URL of entension's homepage"
+    },
+    "contextMenuItemEtymologyRequest": {
+        "message": "Check selected etymology of the selected word",
+        "description": "Title of context menu item that checks etymology."
+    },
+    "warningIncorrectString": {
+        "message": "Can't find selected word in dictionary",
+        "description": "Warning message when request with selected string doesn't return correct data."
+    },
+    "messagePossibleAlternatives": {
+        "message": "Here are other words you might have meant: ",
+        "description": "Warning message when request with selected string doesn't return correct data."
+    },
+    "warningEtymologyNotAvailable": {
+        "message": "Etymology not available for this meaning",
+        "description": "Warning message when request with selected string doesn't return etymology for this meaning."
+    }
+
+    
+}
