@@ -18,28 +18,31 @@ browser.contextMenus.onClicked.addListener((info, tab) => {
         fetch(API_URL + info.selectionText + API_INFIX + API_KEY)
         .then(response => {
             if (!response.ok) {
-            throw new Error('Network response was not ok');
+            throw new Error('Network response was not correct');
             }
             return response.json();
         })
-        .then(data => {
+        .then(async data => {
             if (data.length == 0) {
                 alert(browser.i18n.getMessage("warningIncorrectString"));
-            }else{
-                browser.cookies.set({
-                    url: browser.extension.getURL(""),
-                    name: "etymologydata",
-                    value: JSON.stringify(data),
-                });
 
                 let createData = {
                     type: "detached_panel",
-                    url: "popup/index.html",
-                    width: 250,
-                    height: 100,
+                    url: "popup/index.html"+ "#" + encodeURIComponent(JSON.stringify({"message": browser.i18n.getMessage("warningIncorrectString")})),
+                    width: 600,
+                    height: 900,    
                   };
                 let creating = browser.windows.create(createData);
-                  
+
+            }else{
+
+                let createData = {
+                    type: "detached_panel",
+                    url: "popup/index.html"+ "#" + encodeURIComponent(JSON.stringify({"data": data, "selectionText": info.selectionText })),
+                    width: 600,
+                    height: 900,    
+                  };
+                let creating = browser.windows.create(createData);
             }
             
         })

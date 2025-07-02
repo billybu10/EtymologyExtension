@@ -17,7 +17,7 @@
         "description": "Title of context menu item that checks etymology."
     },
     "warningIncorrectString": {
-        "message": "Can't find selected word in dictionary",
+        "message": "Can't find selected word in the dictionary",
         "description": "Warning message when request with selected string doesn't return correct data."
     },
     "messagePossibleAlternatives": {
