@@ -28,7 +28,7 @@ browser.contextMenus.onClicked.addListener((info, tab) => {
 
                 let createData = {
                     type: "detached_panel",
-                    url: "popup/index.html"+ "#" + encodeURIComponent(JSON.stringify({"message": browser.i18n.getMessage("warningIncorrectString")})),
+                    url: "popup/index.html"+ "#" + encodeURIComponent(JSON.stringify({"message": browser.i18n.getMessage("warningIncorrectString"), "selectionText": info.selectionText})),
                     width: 600,
                     height: 900,    
                   };
