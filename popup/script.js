@@ -34,7 +34,7 @@ function parseTextWithTokensToHTML(text){
     parsedText = parsedText.replaceAll("{\/ma}", "");
     parsedText = parsedText.replaceAll(/{a_link\|([^}|]*)}/g, (match, field2) => {
           const linkText = field2.trim();
-          return `<a href="https://www.merriam-webster.com/dictionary/${linkText}">${linkText}</a>`;
+          return `<a href="https://www.merriam-webster.com/dictionary/${linkText}" target="_blank" rel="noopener noreferrer">${linkText}</a>`;
     });
 
     parsedText = parsedText.replaceAll( /{(d_link|i_link|et_link|mat)\|([^}|]*)\|([^}|]*)}/g, (match, type, field2, field3) => {
@@ -42,13 +42,13 @@ function parseTextWithTokensToHTML(text){
           const target = field3.trim() || linkText;
           switch(type) {
             case 'i_link':
-              return `<a href="https://www.merriam-webster.com/dictionary/${target}"><i>${linkText}</i></a>`;
+              return `<a href="https://www.merriam-webster.com/dictionary/${target}" target="_blank" rel="noopener noreferrer"><i>${linkText}</i></a>`;
             case 'et_link':
-              return `<a href="https://www.merriam-webster.com/dictionary/${target}" class="etymology">${linkText}</a>`;
+              return `<a href="https://www.merriam-webster.com/dictionary/${target}" target="_blank" rel="noopener noreferrer">${linkText}</a>`;
             case 'mat':
-              return `<a href="https://www.merriam-webster.com/dictionary/${target}" class="more-at">${linkText}</a>`;
+              return `<a href="https://www.merriam-webster.com/dictionary/${target}" target="_blank" rel="noopener noreferrer">${linkText}</a>`;
             default:
-              return `<a href="https://www.merriam-webster.com/dictionary/${target}">${linkText}</a>`;
+              return `<a href="https://www.merriam-webster.com/dictionary/${target}" target="_blank" rel="noopener noreferrer">${linkText}</a>`;
           }
     });
 
@@ -56,7 +56,7 @@ function parseTextWithTokensToHTML(text){
           const linkText = field2.trim();
           const target = field3.trim() || linkText;
           const senseInfo = field4.trim();
-          return `<a href="https://www.merriam-webster.com/dictionary/${target}">${linkText}</a> ${senseInfo}`;
+          return `<a href="https://www.merriam-webster.com/dictionary/${target}" target="_blank" rel="noopener noreferrer">${linkText}</a> ${senseInfo}`;
     });
 
     parsedText = parsedText.replaceAll( /{dxt\|([^}|]*)\|([^}|]*)\|([^}|]*)}/g, (match, field2, field3, field4) => {

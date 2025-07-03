@@ -1,6 +1,8 @@
 # Etymology Extension
 Firefox extension that lets you check etymology of the selected word
 
+![result of extensions work](Screenshot.png)
+
 ## How to build
 1. Make sure you have [web-ext](https://github.com/mozilla/web-ext) installed
 2. Get your api key at [Merriam-Webster's website](https://www.dictionaryapi.com/) (make sure you check 
