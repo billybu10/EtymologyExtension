@@ -1,7 +1,9 @@
 # Etymology Extension
-Firefox extension that lets you check etymology of the selected word
+Firefox extension that lets you check etymology of the selected word. Just select the word, right-click, and choose "Check etymology of the selected word" from context menu.
 
 ![result of extensions work](Screenshot.png)
+
+![usage](usage.gif)
 
 ## How to build
 1. Make sure you have [web-ext](https://github.com/mozilla/web-ext) installed

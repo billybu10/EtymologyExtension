@@ -13,7 +13,7 @@
         "description": "URL of entension's homepage"
     },
     "contextMenuItemEtymologyRequest": {
-        "message": "Check selected etymology of the selected word",
+        "message": "Check etymology of the selected word",
         "description": "Title of context menu item that checks etymology."
     },
     "warningIncorrectString": {

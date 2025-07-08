@@ -1,0 +1,11 @@
+{
+    "summary": {
+      "en-US": "Extension which allows you to check etymology of a highlighted word."
+    },
+    "categories": [
+      "other"
+    ],
+    "version": {
+      "license": "MPL-2.0"
+    }
+  }
